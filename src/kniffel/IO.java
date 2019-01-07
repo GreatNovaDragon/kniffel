@@ -42,12 +42,15 @@ public class IO {
 		System.out.println("Player" + p + "rolled a " + d);
 	}
 
-	public static String InquireReroll() {
-		System.out.println("Do you want to fill a field or throw away dice and reroll?");
-		if (in.hasNext("f")) {
-			return "f";
-		} else {
-			return "r";
+	public static char InquireReroll() {
+		System.out.println("Enter an minot F (f) if you want to fill a field, or enter anything else to reroll your choice of dices.");
+String temp = in.next();
+		if (temp.equalsIgnoreCase("f")) {
+
+			return 'f';
+		} else{
+
+			return 'r';
 		}
 	}
 

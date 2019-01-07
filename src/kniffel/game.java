@@ -15,9 +15,16 @@ public class game {
 					dice.RD(5, 6);
 					IO.InformRoll(p, dice.toString());
 					rolled++;
-					
-					if (IO.InquireReroll()=="f")
-						then{do stuff;};
+					char rr = IO.InquireReroll();
+					if (rr=='f')
+						{
+						System.out.println("Filling code not yet here");
+						rolled=3;
+					}else if (rr=='r'){
+						System.out.println("Redice code not yet here");
+					}
+						
+						
 						
 				} while (rolled < 3);
 				rolled=0;
