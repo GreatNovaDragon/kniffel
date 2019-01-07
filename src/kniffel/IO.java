@@ -66,7 +66,7 @@ public class IO {
 		}
 		d = d + System.lineSeparator()+ System.lineSeparator();
 		System.out.print(d);
-		return new int[] { 1, 2, 3, 4, 5 };
+		return new int[] {1,2,3,4,5};
 
 	}
 

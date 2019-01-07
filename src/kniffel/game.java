@@ -5,7 +5,6 @@ public class game {
 		int players = IO.InquireInt("How many players do want to play? It defaults to one");
 		int turns = IO.InquireInt("How many turns do you want to play? It defaults to one");
 		int rolled = 0;
-		int a_dice = 5;
 		for (int t = 1; t <= turns; t++) {
 			for (int p = 1; p <= players; p++)
 
@@ -15,15 +14,19 @@ public class game {
 					dice bd = new dice();
 					bd.dice = new int[5];
 					dice dice = new dice();
-					dice.RD(a_dice, 6);
+					dice.RD(5, 6);
 					int a = 0;
 					for (int i = 0; i < bd.dice.length; i++) {
 						if (bd.dice[i] == 0) {
-							bd.dice[i] = dice.dice[a++];
+							bd.dice[i] = dice.dice[a];
+							System.out.println(i+" "+bd.dice[i]+" "+a+" "+dice.dice[a]);
+							a++;
+
 						}
 
 					}
-					IO.InformRoll(p, dice.toString());
+					a=0;
+					IO.InformRoll(p, bd.toString());
 					rolled++;
 					char rr = IO.InquireReroll();
 					if (rr == 'f') {
@@ -33,7 +36,6 @@ public class game {
 						int[] dicetodel = IO.InquireDELETIONOFDICE(bd.dice);
 						for(int i=0; i<dicetodel.length;i++)
 						{bd.dice[dicetodel[i]]=0;}
-						a_dice=dicetodel.length;
 						
 					}
 

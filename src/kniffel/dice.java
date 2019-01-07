@@ -1,6 +1,5 @@
 package kniffel;
 
-import java.util.Arrays;
 
 public class dice {
 	public int[] dice = null;
@@ -17,7 +16,6 @@ public class dice {
 				d[i] = (int) (Math.random() * s) + 1;
 				addedUp = addedUp + d[i];
 			}
-			Arrays.sort(d);
 			dice = d;
 
 		}
