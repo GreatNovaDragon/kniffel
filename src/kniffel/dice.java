@@ -7,7 +7,6 @@ public class dice {
 	public String dType = "";
 	public int addedUp = 0;
 
-	
 	// RD Rolls Dice with aDs expression,aka a dice with s sides
 	public void RD(int a, int s) {
 
@@ -20,11 +19,10 @@ public class dice {
 			}
 			Arrays.sort(d);
 			dice = d;
-			
+
 		}
 
 	}
-		
 
 	@Override
 	public String toString() {

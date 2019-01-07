@@ -43,12 +43,13 @@ public class IO {
 	}
 
 	public static char InquireReroll() {
-		System.out.println("Enter an minot F (f) if you want to fill a field, or enter anything else to reroll your choice of dices.");
-String temp = in.next();
+		System.out.println(
+				"Enter an minor F (f) if you want to fill a field, or enter anything else to reroll your choice of dices.");
+		String temp = in.next();
 		if (temp.equalsIgnoreCase("f")) {
 
 			return 'f';
-		} else{
+		} else {
 
 			return 'r';
 		}
