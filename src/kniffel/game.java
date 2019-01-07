@@ -30,7 +30,11 @@ public class game {
 						System.out.println("Filling code not yet here");
 						rolled = 3;
 					} else if (rr == 'r') {
-						System.out.println("Redice code not yet here");
+						int[] dicetodel = IO.InquireDELETIONOFDICE(bd.dice);
+						for(int i=0; i<dicetodel.length;i++)
+						{bd.dice[dicetodel[i]]=0;}
+						a_dice=dicetodel.length;
+						
 					}
 
 				} while (rolled < 3);

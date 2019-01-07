@@ -55,4 +55,19 @@ public class IO {
 		}
 	}
 
+	public static int[] InquireDELETIONOFDICE(int[] DA_DICE) {
+		String d = "Which of those dices would you want to delete?" + System.lineSeparator() + System.lineSeparator()
+				 + "Number to enter| 1 | 2 | 3 | 4 | 5 " + System.lineSeparator() 
+				 + "---------------|---|---|---|---|---" + System.lineSeparator() 
+				 + "Dice to reroll ";
+
+		for (int i = 0; i < DA_DICE.length; i++) {
+			d = d + "| " + DA_DICE[i] + " ";
+		}
+		d = d + System.lineSeparator()+ System.lineSeparator();
+		System.out.print(d);
+		return new int[] { 1, 2, 3, 4, 5 };
+
+	}
+
 }
