@@ -35,7 +35,7 @@ public class game {
 					} else if (rr == 'r') {
 						int[] dicetodel = IO.InquireDELETIONOFDICE(bd.dice);
 						for(int i=0; i<dicetodel.length;i++)
-						{bd.dice[dicetodel[i]]=0;}
+						{bd.dice[dicetodel[i]-1]=0;}
 						
 					}
 
