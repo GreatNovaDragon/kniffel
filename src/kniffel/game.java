@@ -13,8 +13,12 @@ public class game {
 				do {
 					dice dice = new dice();
 					dice.RD(5, 6);
-					System.out.println("Player" + p + "rolled a " + dice.toString());
+					IO.InformRoll(p, dice.toString());
 					rolled++;
+					
+					if (IO.InquireReroll()=="f")
+						then{do stuff;};
+						
 				} while (rolled < 3);
 				rolled=0;
 			}

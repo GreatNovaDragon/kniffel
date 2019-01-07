@@ -38,4 +38,17 @@ public class IO {
 		System.out.println("It is player " + p + "'s round in turn " + t + ".");
 	}
 
+	public static void InformRoll(int p, String d) {
+		System.out.println("Player" + p + "rolled a " + d);
+	}
+
+	public static String InquireReroll() {
+		System.out.println("Do you want to fill a field or throw away dice and reroll?");
+		if (in.hasNext("f")) {
+			return "f";
+		} else {
+			return "r";
+		}
+	}
+
 }
