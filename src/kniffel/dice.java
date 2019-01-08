@@ -9,17 +9,36 @@ public class dice {
 
 	// RD Rolls Dice with aDs expression,aka a dice with s sides
 	public void RD(int a, int s) {
+		dType = a + "d" + s;
+		dice = roll(a, s);
+		for (int d : dice) {
+			addedUp = addedUp + d;
+		}
+
+	}
+
+	protected int[] roll(int a, int s) {
+
+		int[] d = new int[a];
 
 		if (a != 0 & s != 0) {
-			int[] d = new int[a];
-			dType = a + "d" + s;
+
 			for (int i = 0; i < d.length; i++) {
 				d[i] = (int) (Math.random() * s) + 1;
-				addedUp = addedUp + d[i];
+
 			}
 			Arrays.sort(d);
-			dice = d;
 
+		}
+
+		return d;
+
+	}
+
+	public void reroll(int[] dicetoreroll, int s) {
+		for (int i = 0; i < dicetoreroll.length; i++) {
+			int temp = roll(1,s)[0];
+			dice[dicetoreroll[i] - 1] = temp;
 		}
 
 	}

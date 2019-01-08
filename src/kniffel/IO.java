@@ -11,12 +11,12 @@ public class IO {
 
 			System.out.println("How many dice?");
 			res[0] = in.nextInt();
-			System.out.println("How many sides?");
+			System.out.println("How many sides?" );
 			res[1] = in.nextInt();
 
 		} catch (Exception ex) {
 
-			System.out.println("What you entered is not a number.");
+			System.out.println("What you entered is not a number." + System.lineSeparator() );
 		}
 		return res;
 	}
@@ -29,18 +29,24 @@ public class IO {
 
 		} catch (Exception ex) {
 
-			System.out.println("What you entered is not a number.");
+			System.out.println("What you entered is not a number." + System.lineSeparator() );
 		}
 		return res;
 	}
 
 	public static void InformTurn(int p, int t) {
-		System.out.println("It is player " + p + "'s round in turn " + t + ".");
+		System.out.println("It is player " + p + "'s round in turn " + t + "." + System.lineSeparator() );
 	}
 
-	public static void InformRoll(int p, String d) {
-		System.out.println("Player" + p + "rolled a " + d);
-	}
+	public static void InformRoll(int p, String d, char a) {
+		if (a == 'i')
+		{
+		System.out.println("Player" + p + "rolled a " + d + System.lineSeparator() );
+		}else
+		if (a == 'r'){		System.out.println("Your dice are now " + d + System.lineSeparator() );
+}
+		}
+		
 
 	public static char InquireReroll() {
 		System.out.println(
