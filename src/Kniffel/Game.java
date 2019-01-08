@@ -24,8 +24,8 @@ public class Game {
 						System.out.println("Filling code not yet here");
 						rolled = 3;
 					} else if (rr == 'r') {
-						int[] dicetoreroll = IO.inquireReroll(bd);
-						bd.reroll(dicetoreroll, 6);
+						int[] reroll = IO.inquireReroll(bd);
+						bd.reroll(reroll, 6);
 						IO.informRoll(p, bd, 'r');
 
 					}

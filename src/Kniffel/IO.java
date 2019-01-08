@@ -59,11 +59,11 @@ public class IO {
 		System.out.print(d);
 		
 		String temp = String.valueOf(in.nextInt());
-		System.out.println(temp);
-		int[] res = new int[temp.length()];
-		for(int i=0;i<temp.length();i++){
-			res[i] = temp.charAt(i);
-		}
+		char[] temp2 = temp.toCharArray();
+		int[] res = new int[temp2.length];
+		for(int i=0;i<temp2.length;i++){
+			res[i] = Character.getNumericValue(temp2[i]) ;
+}
 		
 		return res;
 

@@ -77,11 +77,10 @@ public class Dice {
 	public void reroll(int[] numDiceReroll, int s) {
 		for (int i = 0; i < numDiceReroll.length; i++) {
 			int temp = rollOneDice(s);
-			dice[numDiceReroll[i]] = temp;
+			dice[numDiceReroll[i]-1] = temp;
 		}
 
 	}
-
 	@Override
 	public String toString() {
 		String temp = "";
