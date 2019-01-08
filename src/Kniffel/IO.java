@@ -1,4 +1,4 @@
-package kniffel;
+package Kniffel;
 
 import java.util.Scanner;
 
@@ -23,7 +23,7 @@ public class IO {
 	}
 
 	// DICE instead of string
-	public static void informRoll(int p, dice d, char a) {
+	public static void informRoll(int p, Dice d, char a) {
 		if (a == 'i') {
 			System.out.println("Player" + p + "rolled a " + d.toString() + System.lineSeparator());
 		} else if (a == 'r') {
@@ -46,7 +46,7 @@ public class IO {
 
 	// DICE instead of int array
 
-	public static int[] inquireReroll(dice dice) {
+	public static int[] inquireReroll(Dice dice) {
 		String d =   "Which of those dices would you want to delete?" + System.lineSeparator() + System.lineSeparator()
 				   + "Number to enter| 1 | 2 | 3 | 4 | 5 "  + System.lineSeparator() 
 				   + "---------------|---|---|---|---|---"  + System.lineSeparator() 
@@ -57,7 +57,15 @@ public class IO {
 		}
 		d = d + System.lineSeparator() + System.lineSeparator();
 		System.out.print(d);
-		return new int[] { 1, 2, 3, 4, 5 };
+		
+		String temp = String.valueOf(in.nextInt());
+		System.out.println(temp);
+		int[] res = new int[temp.length()];
+		for(int i=0;i<temp.length();i++){
+			res[i] = temp.charAt(i);
+		}
+		
+		return res;
 
 	}
 

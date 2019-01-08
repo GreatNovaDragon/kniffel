@@ -1,8 +1,8 @@
-package kniffel;
+package Kniffel;
 
 import java.util.Arrays;
 
-public class dice {
+public class Dice {
 	private int[] dice = null;
 	private String dType = "";
 	private int dSum = 0;
@@ -77,7 +77,7 @@ public class dice {
 	public void reroll(int[] numDiceReroll, int s) {
 		for (int i = 0; i < numDiceReroll.length; i++) {
 			int temp = rollOneDice(s);
-			dice[numDiceReroll[i] - 1] = temp;
+			dice[numDiceReroll[i]] = temp;
 		}
 
 	}

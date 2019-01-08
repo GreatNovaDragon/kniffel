@@ -1,11 +1,11 @@
-package kniffel;
+package Kniffel;
 
-public class game {
+public class Game {
 	public static void start() {
 		int players = IO.inquireInt("How many players do want to play? It defaults to one");
 		int turns = IO.inquireInt("How many turns do you want to play? It defaults to one");
 		int rolled = 0;
-		dice bd = new dice();
+		Dice bd = new Dice();
 		for (int t = 1; t <= turns; t++) {
 			for (int p = 1; p <= players; p++)
 
@@ -14,7 +14,8 @@ public class game {
 				do {
 
 					if (rolled == 0) {
-						bd.fiveDSix();;
+						bd.fiveDSix();
+
 						IO.informRoll(p, bd, 'i');
 					}
 					rolled++;

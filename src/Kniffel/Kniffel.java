@@ -1,9 +1,9 @@
-package kniffel;
+package Kniffel;
 
-public class kniffel {
+public class Kniffel {
 
 	public static void main(String[] args) {
-		game.start();
+		Game.start();
 	}
 
 }
