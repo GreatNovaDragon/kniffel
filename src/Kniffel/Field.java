@@ -10,14 +10,14 @@ public class Field {
 	 * eval_variant - names the evaluation variant 
 	 * points - points if there are any in the field
 	 */
-	private class row
+	private class ScoreRow
 	{
 		private String name;
 		private String eval_variant;
 		private Integer points = null;	
 		
-		public row(String pName, String pEval_variant, int pI_points){
-			setName(pName); setEval_variant(pEval_variant); setPoints(pI_points);
+		public ScoreRow(String pName, String pEval_variant){
+			setName(pName); setEval_variant(pEval_variant);
 		}
 
 		public String getName() {
@@ -45,13 +45,32 @@ public class Field {
 		}
 	}
 	
-	public void blubber(){
-	List<row> pointField = new ArrayList<row>();
-	pointField.add(new row("Test","test",0));
+	public Field(){
+	List<ScoreRow> pointField = new ArrayList<ScoreRow>();
 	
+	pointField.add(new ScoreRow("Ones","one"));
+	pointField.add(new ScoreRow("Twos","two"));
+	pointField.add(new ScoreRow("Threes","one"));
+	pointField.add(new ScoreRow("Fours","one"));
+	pointField.add(new ScoreRow("Fives","one"));
+	pointField.add(new ScoreRow("Sixes","one"));
+	pointField.add(new ScoreRow("Three Sames","tSames"));
+	pointField.add(new ScoreRow("Four Hours","vSames"));
+	pointField.add(new ScoreRow("Full House","FH"));
+	pointField.add(new ScoreRow("Small Street","smStr"));
+	pointField.add(new ScoreRow("Big Street","bigStr"));
+	pointField.add(new ScoreRow("Yahtzee","all"));
+	pointField.add(new ScoreRow("Chance","sum"));
+
+	
+	
+
 	}
 	
-	
+public void evaluate (Dice d, ScoreRow r){
+		
+		
+	}
 	
 	
 	
