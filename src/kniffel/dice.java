@@ -3,20 +3,52 @@ package kniffel;
 import java.util.Arrays;
 
 public class dice {
-	public int[] dice = null;
-	public String dType = "";
-	public int addedUp = 0;
+	private int[] dice = null;
+	private String dType = "";
+	private int dSum = 0;
 
-	// RD Rolls Dice with aDs expression,aka a dice with s sides
-	public void RD(int a, int s) {
+	/*
+	 * RD Rolls Dice with aDs expression and inserts it into dice
+	 *
+	 * int a - Amount of dices to be rolled 
+	 * int s - Amount of sides 
+	 */
+	public void initDice(int a, int s) {
 		dType = a + "d" + s;
 		dice = roll(a, s);
 		for (int d : dice) {
-			addedUp = addedUp + d;
+			dSum = dSum + d;
 		}
 
 	}
 
+	// Rolls an 5d6
+	public void fiveDSix() {
+		initDice(5, 6);
+	}
+
+	private int rollOneDice(int s) {
+		return roll(1, s)[0];
+	}
+
+	public int[] GetDice() {
+		return dice;
+	}
+
+	public String GetdType() {
+		return dType;
+	}
+
+	public int getdSum() {
+		return dSum;
+	}
+
+	/*
+	 * Gives out an Int-Array of rolled dices
+	 * 
+	 * int a - Amount of dices to be rolled 
+	 * int s - Amount of sides 
+	 */
 	protected int[] roll(int a, int s) {
 
 		int[] d = new int[a];
@@ -35,10 +67,17 @@ public class dice {
 
 	}
 
-	public void reroll(int[] dicetoreroll, int s) {
-		for (int i = 0; i < dicetoreroll.length; i++) {
-			int temp = roll(1,s)[0];
-			dice[dicetoreroll[i] - 1] = temp;
+	/*
+	 * Rerolls the entered Dice
+	 *  
+	 * int[] numDiceReroll - Array of Dices, contains the Index+1 of the dice to reroll 
+	 * int s - amount of sides
+	 * 
+	 */
+	public void reroll(int[] numDiceReroll, int s) {
+		for (int i = 0; i < numDiceReroll.length; i++) {
+			int temp = rollOneDice(s);
+			dice[numDiceReroll[i] - 1] = temp;
 		}
 
 	}
@@ -47,7 +86,7 @@ public class dice {
 	public String toString() {
 		String temp = "";
 		if (dType == "" & dice == null) {
-			temp = "This dice hasn't been rolled yet, either due to an error in input or you were too fast in asking for the result.";
+			temp = "not_rolled";
 		} else {
 			temp = dType + ":";
 			for (int i = 0; i < dice.length; i++) {
@@ -55,7 +94,7 @@ public class dice {
 			}
 
 		}
-		temp = temp + " (" + addedUp + ")";
+		temp = temp + " (" + dSum + ")";
 		return temp;
 
 	}
