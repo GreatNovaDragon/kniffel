@@ -7,6 +7,7 @@ public class Game {
 		int rolled = 0;
 		Dice bd = new Dice();
 		for (int t = 1; t <= turns; t++) {
+			Field field = new Field();
 			for (int p = 1; p <= players; p++)
 
 			{
@@ -22,6 +23,7 @@ public class Game {
 					char rr = IO.inquireAction();
 					if (rr == 'f') {
 						System.out.println("Filling code not yet here");
+						IO.listField(field);
 						rolled = 3;
 					} else if (rr == 'r') {
 						int[] reroll = IO.inquireReroll(bd);

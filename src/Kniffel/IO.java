@@ -32,8 +32,8 @@ public class IO {
 	}
 
 	public static char inquireAction() {
-		System.out.println(
-				"Enter an minor F (f) if you want to fill a field, or enter anything else to reroll your choice of dices.");
+		System.out
+				.println("Enter F if you want to fill a field, enter any other letter to reroll your choice of dices.");
 		String temp = in.next();
 		if (temp.equalsIgnoreCase("f")) {
 
@@ -47,25 +47,41 @@ public class IO {
 	// DICE instead of int array
 
 	public static int[] inquireReroll(Dice dice) {
-		String d =   "Which of those dices would you want to delete?" + System.lineSeparator() + System.lineSeparator()
-				   + "Number to enter| 1 | 2 | 3 | 4 | 5 "  + System.lineSeparator() 
-				   + "---------------|---|---|---|---|---"  + System.lineSeparator() 
-				   + "Dice to reroll ";
+		String d = "Which of those dices would you want to delete?" + System.lineSeparator() + System.lineSeparator()
+				+ "Number to enter| 1 | 2 | 3 | 4 | 5 " + System.lineSeparator() + "---------------|---|---|---|---|---"
+				+ System.lineSeparator() + "Dice to reroll ";
 
 		for (int i = 0; i < dice.GetDice().length; i++) {
 			d = d + "| " + dice.GetDice()[i] + " ";
 		}
 		d = d + System.lineSeparator() + System.lineSeparator();
 		System.out.print(d);
-		
+
 		String temp = String.valueOf(in.nextInt());
 		char[] temp2 = temp.toCharArray();
 		int[] res = new int[temp2.length];
-		for(int i=0;i<temp2.length;i++){
-			res[i] = Character.getNumericValue(temp2[i]) ;
-}
-		
+		for (int i = 0; i < temp2.length; i++) {
+			res[i] = Character.getNumericValue(temp2[i]);
+		}
+
 		return res;
+
+	}
+
+	public static void listField(Field field) {
+
+		for (int i = 0; i < field.getpointfield().size(); i++) {
+			String temp = field.getpointfield().get(i).getName() + ":";
+			if (field.getpointfield().get(i).getPoints() == null) {
+				temp = temp + " ";
+			} else if (field.getpointfield().get(i).getPoints() == 0) {
+				temp = temp + "/";
+			} else {
+
+				temp = temp + field.getpointfield().get(i).getPoints();
+			}
+			System.out.println(temp);
+		}
 
 	}
 
